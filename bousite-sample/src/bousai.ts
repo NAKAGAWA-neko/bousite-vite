@@ -41,8 +41,8 @@ window.onload = function () {
     },
   });
 };
-
-const changeImg = (url: string, e: HTMLElement) => {
+console.log("changeimg関数が呼ばれました");
+const changeimg = (url: string, e: HTMLElement) => {
   const area1 = document.getElementById("area1") as HTMLImageElement;
   if (area1 !== null) {
     area1.src = url;
