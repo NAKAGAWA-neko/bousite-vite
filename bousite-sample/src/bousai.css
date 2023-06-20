@@ -1,0 +1,777 @@
+@charset "UTF-8";
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Segoe UI, Helvetica Neue, HelveticaNeue, Hiragino Kaku Gothic ProN, Meiryo, sans-serif;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+  color: #19170d;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7,
+p {
+  font-size: 16px;
+  margin: 0;
+}
+
+p {
+  color: #19170d;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  margin: 16px 0;
+  color: #e8c334;
+}
+
+h2 {
+  margin: 30px auto 21px auto;
+  text-align: center;
+}
+h2 img {
+  height: 50px;
+  width: auto;
+}
+
+h3 {
+  font-weight: 500;
+  color: #19170d;
+  text-align: justify;
+}
+
+h4 {
+  color: #19170d;
+  font-size: 27px;
+  margin: -10px 0 0 0;
+}
+
+h5 {
+  font-size: 23px;
+  color: #19170d;
+  position: relative;
+  margin-bottom: 3px;
+}
+h5::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-image: url(../images/bousai-mark.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  margin: 0 5px 5px 0;
+}
+
+.h5sub {
+  font-size: 16px;
+  font-weight: 600;
+  margin: -8px 0 0 20px;
+}
+
+h6 {
+  font-size: 23px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.lead {
+  margin: 10px 0 0 0;
+}
+
+.credit {
+  font-size: 14px;
+  text-align: right;
+  color: #19170d;
+  margin: 5px 0 0 0;
+  line-height: 1.5;
+}
+
+.notes {
+  font-size: 14px;
+  margin-top: 3px;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.caption {
+  margin-top: 3px;
+  text-align: justify;
+}
+
+.border-max {
+  width: 100%;
+  background-color: #19170d;
+  height: 2px;
+  width: calc(100% + 32px); /* 左右のマージンを考慮した幅に設定 */
+  margin: 30px -16px; /* 上下のマージンを指定 */
+}
+
+.border-1px {
+  width: 100%;
+  background-color: #19170d;
+  height: 1px;
+  margin: 20px 0 20px 0;
+}
+
+.bousai-navi {
+  margin: 0;
+}
+
+.navi-main {
+  background-image: url(../images/bousai-obi.jpg);
+  background-color: #e8c334;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.yol-logo {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  width: 150px;
+}
+.yol-logo img {
+  margin: 4px 0 0 31px;
+  width: 100%;
+}
+
+.bousai-logo-mini {
+  margin: 0 auto;
+  display: flex;
+  height: 28px;
+  justify-content: center;
+  padding: 6px 0;
+}
+.bousai-logo-mini img {
+  margin: 2px 0 0 0;
+  height: 100%;
+}
+
+.naviBtn {
+  display: block;
+  position: absolute;
+  z-index: 13;
+  right: 22px;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  text-align: center;
+}
+.naviBtn span {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  left: 6px;
+  background: #19170d;
+  transition: 0.3s ease-in-out;
+}
+.naviBtn span:nth-child(1) {
+  top: 10px;
+}
+.naviBtn span:nth-child(2) {
+  top: 20px;
+}
+.naviBtn span:nth-child(3) {
+  top: 30px;
+}
+
+.naviBtn.active span:nth-child(1) {
+  top: 16px;
+  left: 6px;
+  background: #19170d;
+  transform: rotate(-45deg);
+}
+.naviBtn.active span:nth-child(2), .naviBtn.active span:nth-child(3) {
+  top: 16px;
+  background: #19170d;
+  transform: rotate(45deg);
+}
+
+.naviSp {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  color: #19170d;
+  background: #e8c334;
+  text-align: center;
+  width: 50%;
+  height: 100vh;
+  opacity: 0;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+  visibility: hidden;
+  margin-top: 30px;
+}
+.naviSp img {
+  margin-top: 50px;
+  width: 50%;
+}
+
+.menu-ul {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  transition: 0.4s all;
+  display: inline-block;
+  margin: 20px 0 0 0;
+  height: 39px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #19170d;
+  text-align: center;
+}
+.menu:last-child {
+  padding-bottom: 0;
+}
+.menu a {
+  display: inline-block;
+  color: #19170d;
+  position: relative;
+  text-decoration: none;
+  width: -moz-max-content;
+  width: max-content;
+}
+.menu a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #18272f;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+.menu a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+nav.naviSp.active {
+  opacity: 100;
+  visibility: visible;
+}
+
+.footer-yol-logo {
+  background-color: #e8c334;
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-yol-logo a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-yol-logo img {
+  margin: 0 auto;
+  padding: 10px;
+  width: 120px;
+}
+
+#gototop {
+  position: relative;
+  cursor: pointer;
+  z-index: 500;
+}
+#gototop img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 39px;
+  margin: 0 16px 5px 0;
+}
+
+#content-page {
+  margin: 0 16px;
+}
+
+#content-main {
+  display: block;
+}
+
+.content-group {
+  display: block;
+  margin-top: 30px;
+}
+
+.content-g_img {
+  margin-top: 16px;
+}
+.content-g_img img {
+  width: 100%;
+}
+
+.content-group-scroll {
+  display: block;
+  margin-top: 30px;
+}
+
+.content-g_img_scroll {
+  margin-top: 10px;
+  margin-right: -16px;
+  overflow-x: scroll;
+}
+.content-g_img_scroll img {
+  height: 800px;
+}
+
+.yomiurimember {
+  font-size: 14px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.lockicon {
+  height: 20px;
+  margin: -2px 0 0 0;
+}
+
+.linklist-photo {
+  display: block;
+  position: relative;
+}
+
+.linklist-menu-t {
+  font-size: 14px;
+  color: white;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #686972;
+  padding: 4px 8px;
+  border-radius: 5px;
+  margin: 0 0 10px 0;
+}
+
+.linklist-photo-i {
+  margin-bottom: 20px;
+}
+
+.linklist-photo-img {
+  width: 100%;
+  height: 180px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+.linklist-photo-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 100%;
+     object-position: 50% 100%;
+}
+
+.linklist-menu-item span {
+  font-weight: 600;
+}
+.linklist-menu-item ul {
+  margin: 5px 0 0 0;
+}
+.linklist-menu-item li {
+  margin: 0 0 5px -15px;
+}
+
+.lockicon-list img {
+  height: 15px;
+}
+.lockicon-list p {
+  margin: 0;
+}
+
+.linklist-menu-item-head {
+  display: flex;
+  align-items: center;
+}
+
+.lockicon-list {
+  height: 20px;
+  margin: -3px 0 0 -3px;
+}
+
+.link-next {
+  margin-top: 20px;
+}
+
+.nextpage {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.nextbtn {
+  /*テキストの基点とするためrelativeを指定*/
+  position: relative;
+  /*ボタンの形状*/
+  border: 1px solid #19170d;
+  border-radius: 5px;
+  min-width: 210px;
+  padding: 20px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  color: #19170d;
+  outline: none;
+  /*アニメーションの指定*/
+  transition: all 0s;
+  /*hoverした際の変化*/
+  /*hoverするとテキストが入れ替わる設定*/
+}
+.nextbtn:hover {
+  background: #19170d;
+  color: white;
+}
+.nextbtn span {
+  /*絶対配置でテキストの位置を決める*/
+  position: absolute;
+  font-weight: 600;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /*アニメーションの指定*/
+  transition: all 0.1s;
+  /*ブロック要素にしてテキスト折り返しなし*/
+  display: block;
+  white-space: nowrap;
+  /*差し替わるテキストの設定*/
+}
+.nextbtn span:nth-child(2) {
+  opacity: 0; /*透過0に*/
+}
+.nextbtn:hover span:nth-child(1) {
+  opacity: 0; /*透過0に*/
+}
+.nextbtn:hover span:nth-child(2) {
+  opacity: 1; /*不透明に*/
+}
+
+.upface_op {
+  transition: 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.upface_op.on {
+  opacity: 1;
+}
+
+.upface_op_pc_none {
+  transition: 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.upface_op_pc_none.on {
+  opacity: 1;
+}
+
+.upface {
+  transition: 0.3s ease-in-out;
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+.upface.on {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.upface_left {
+  transition: 0.3s ease-in-out;
+  transform: translateX(-10px);
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+}
+
+.upface_left.on {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -moz-opacity: 1;
+  transform: translateX(0);
+}
+
+.upface_right {
+  transition: 0.3s ease-in-out;
+  transform: translateX(10px);
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+}
+
+.upface_right.on {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -moz-opacity: 1;
+  transform: translateX(0);
+}
+
+@media screen and (max-width: 600px) {
+  .content-g_img {
+    pointer-events: none;
+  }
+}
+@media screen and (min-width: 599px) {
+  body {
+    line-height: 1.7;
+  }
+  .lead {
+    margin: 39px 0 0 0;
+  }
+  nav.naviSp {
+    width: 30%;
+  }
+  .menu {
+    font-size: 23px;
+    margin: 25px 0 0 0;
+  }
+  .menu img {
+    margin: 20px 0 0 0;
+    width: 39%;
+  }
+  #content-page {
+    margin: 0 auto;
+    max-width: 714px;
+  }
+  #content-group-pc-flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .content-group {
+    display: block;
+    flex-basis: calc(50% - 20px);
+  }
+  .content-g_img_scroll {
+    margin-right: 0;
+  }
+  .upface_op_pc_none {
+    transition: none;
+    opacity: 1;
+  }
+  .upface_op_pc_none.on {
+    opacity: 1;
+  }
+}
+#top {
+  width: 100%;
+}
+
+.top-main {
+  display: block;
+  position: relative;
+  margin: 0 16px;
+}
+
+.bousai-logo {
+  text-align: right;
+}
+.bousai-logo img {
+  width: 200px;
+}
+
+.top-lead-h3 {
+  margin: 0;
+}
+
+#content-menu {
+  margin-top: 50px;
+}
+
+.content-menu-main {
+  max-width: 358px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 16px;
+}
+
+.content {
+  display: block;
+  width: 170px;
+  margin: 0 0 16px 0;
+}
+
+.content-img img {
+  width: 170px;
+  height: 170px;
+  overflow: hidden;
+  margin-right: 16px;
+  border-radius: 0 0 30% 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.content-element {
+  margin-top: 8px;
+  text-align: center;
+}
+.content-element p {
+  text-align: justify;
+}
+
+.photo-slide-main {
+  max-width: 599px;
+  max-height: 424px;
+  margin: 0 auto;
+}
+
+.photo-slide {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 70.64%; /* 1:1.427 の比率に基づくパディングトップの割合 */
+}
+
+.slide-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 100%;
+     object-position: 50% 100%;
+  animation: change-img 20s infinite;
+}
+.slide-image:nth-of-type(1) {
+  animation-delay: 0s;
+}
+.slide-image:nth-of-type(2) {
+  animation-delay: 5s;
+}
+.slide-image:nth-of-type(3) {
+  animation-delay: 10s;
+}
+.slide-image:nth-of-type(4) {
+  animation-delay: 15s;
+}
+
+@keyframes change-img {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    z-index: -1;
+  }
+}
+.gke-fire-group {
+  background-color: #686972;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 10px;
+}
+
+#gke-fire-date {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 20px;
+  width: auto;
+}
+#gke-fire-date p {
+  margin: 5px 10px 16px 10px;
+  font-size: 18px;
+  color: white;
+  line-height: 1.25;
+}
+
+.c-pointer {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.c-pointer:hover {
+  color: #e8c334;
+}
+
+#gke-fire-date p.c-pointer.clicked {
+  color: yellow;
+  text-decoration: none;
+}
+
+.gke-fire-img {
+  margin: 20px 10px 20px 0;
+  width: 230px;
+}
+
+.link-item {
+  text-align: center;
+  margin: 40px 0 30px 0;
+}
+.link-item p {
+  font-weight: 600;
+  line-height: 1.4;
+}
+.link-item a {
+  font-weight: 600;
+  color: white;
+}
+
+.next-article-link {
+  margin: 10px auto 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 10px 0 20px;
+  height: 40px;
+  background: black;
+  text-align: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  justify-content: center;
+}
+
+.next-article-link:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  border: 20px solid transparent; /*吹き出しの縦幅*/
+  border-left: 15px solid #19170d; /*吹き出しの横幅*/
+}/*# sourceMappingURL=bousai.css.map */
