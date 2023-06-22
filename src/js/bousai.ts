@@ -41,7 +41,7 @@ window.onload = function () {
     },
   });
 };
-console.log("changeimg関数が呼ばれました");
+
 const changeimg = (url: string, e: HTMLElement) => {
   const area1 = document.getElementById("area1") as HTMLImageElement;
   if (area1 !== null) {
