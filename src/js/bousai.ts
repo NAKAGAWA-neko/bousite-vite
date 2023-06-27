@@ -1,4 +1,5 @@
-import $ from "jquery";
+import jQuery from "jquery";
+const $ = jQuery;
 import ScrollHint from "scroll-hint";
 new ScrollHint(".js-scrollable");
 
@@ -42,21 +43,6 @@ window.onload = function () {
   });
 };
 
-const changeimg = (url: string, e: HTMLElement) => {
-  const area1 = document.getElementById("area1") as HTMLImageElement;
-  if (area1 !== null) {
-    area1.src = url;
-    let nodes = document.getElementById("gke-fire-date");
-    if (nodes !== null) {
-      let img_child = nodes.children;
-      for (let i = 0; i < img_child.length; i++) {
-        img_child[i].classList.remove("clicked"); // クリック前に .clicked クラスを削除する
-      }
-      e.classList.add("clicked"); // クリックされた要素に .clicked クラスを追加する
-    }
-  }
-};
-
 // グループが出てくる
 
 //scroll_effect
@@ -90,3 +76,5 @@ $(function () {
     }
   });
 });
+
+///画像が大きくなる

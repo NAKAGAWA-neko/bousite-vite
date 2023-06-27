@@ -275,6 +275,41 @@
       </div>
     </footer>
     <script type="module" src="src/js/bousai.ts"></script>
-    <!-- <script type="text/javascript" src="src/js/bousai0.js"></script> -->
+
+    <script type="text/javascript">
+      const changeimg = (url, e) => {
+        const area1 = document.getElementById("area1");
+        if (area1 !== null) {
+          area1.src = url;
+          let nodes = document.getElementById("gke-fire-date");
+          if (nodes !== null) {
+            let img_child = nodes.children;
+            for (let i = 0; i < img_child.length; i++) {
+              img_child[i].classList.remove("clicked"); // クリック前に .clicked クラスを削除する
+            }
+            e.classList.add("clicked"); // クリックされた要素に .clicked クラスを追加する
+          }
+        }
+      };
+    </script>
+    <script src="src/js/lightbox.min.js"></script>
+
+    <script type="text/javascript">
+      const showOverlay = (imageSrc, captionTextg) => {
+        var overlay = document.getElementById("overlay");
+        var overlayImage = overlay.getElementsByTagName("img")[0];
+        var caption = overlay.getElementsByClassName("caption")[0];
+
+        overlayImage.src = imageSrc;
+        caption.textContent = captionText;
+
+        overlay.style.display = "block";
+      };
+
+      const hideOverlay = () => {
+        var overlay = document.getElementById("overlay");
+        overlay.style.display = "none";
+      };
+    </script>
   </body>
 </html>
