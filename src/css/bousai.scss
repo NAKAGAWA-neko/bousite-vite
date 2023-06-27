@@ -4,44 +4,88 @@
 // topページ ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓----------
 #top {
   width: 100%;
+  max-width: 714px;
+  margin: 0 auto;
 }
 .top-main {
   display: block;
   position: relative;
   margin: 0 16px;
+  @media screen and (min-width: 599px) {
+    margin: 0 0;
+  }
 }
 
-.bousai-logo {
-  margin: 0 0 0 auto;
+.top-bousai-logo {
+  position: absolute;
+  top: -30px;
+  left: 0;
   width: 200px;
+
+  img {
+    height: 100%;
+    width: auto;
+  }
 }
 
 .top-lead-h3 {
-  margin: 0;
+  margin: 70px 0 0 0;
+  max-width: 714px;
 }
 
 #content-menu {
-  margin: 0 16px;
+  margin: 20px auto 0 auto;
+  max-width: 714px;
 }
 
 .content-menu-main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  max-width: 714px;
+  @media screen and (min-width: 599px) {
+  }
 }
-
-// .content-bg {
-//   background-color: l.$main-bgy-c;
-//   padding: 20px;
-//   width: calc(100% + 32px); /* 左右のマージンを考慮した幅に設定 */
-//   margin: 0 -16px; /* 上下のマージンを指定 */
-// }
 
 .content {
   display: block;
+  position: relative;
   max-width: 599px;
-  padding: 30px 60px;
-  // border-bottom: solid 1px l.$main-gr-c;
+  margin: 0 60px;
+  padding: 30px 0;
+
+  @media screen and (min-width: 599px) {
+    margin: 0 auto;
+    width: auto;
+    flex-basis: calc(45% - 0px);
+  }
+}
+
+.content-headline-img {
+  display: flex;
+}
+
+.content-headline-right,
+.content-headline-left {
+  top: 0;
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  img {
+    width: 40px;
+  }
+}
+
+.content-headline-right {
+  right: -30px;
+}
+
+.content-headline-left {
+  left: -30px;
+  @media screen and (min-width: 599px) {
+    left: auto;
+    right: -30px;
+  }
 }
 
 .content-img {
@@ -62,17 +106,10 @@
 .content-element {
   text-align: left;
 
-  h4 {
-    text-align: center;
-    margin: 6px 0;
-    img {
-      height: 25px;
-    }
-  }
   p {
     font-size: 15px;
     line-height: 1.5;
-    margin-bottom: -5px;
+    margin: 10px 0 0 0;
   }
 }
 
@@ -80,9 +117,7 @@
 
 // 画像スライド ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓------------------
 .photo-slide-main {
-  max-width: 599px;
-  max-height: 424px;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 .photo-slide {
   position: relative;
@@ -223,16 +258,3 @@
 // -------------------------------------------------
 
 // レスポンシブ600以上------------------------------
-
-@media screen and (min-width: 599px) {
-  // topページ ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓----------
-
-  .content {
-    padding: 20px;
-    margin: 20px 0 0 0;
-    display: block;
-    width: auto;
-
-    flex-basis: calc(45% - 25px);
-  }
-}

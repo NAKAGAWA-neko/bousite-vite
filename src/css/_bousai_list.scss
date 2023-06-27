@@ -11,6 +11,10 @@ body {
   font-size: 16px;
   line-height: 1.5;
   background-color: $main-bgc;
+
+  @media screen and (min-width: 599px) {
+    line-height: 1.7;
+  }
 }
 
 // 文字と線 ----------------------------
@@ -44,7 +48,6 @@ a {
 }
 
 h1 {
-  margin: 16px 0;
   color: $main-y-c;
 }
 
@@ -104,6 +107,9 @@ h6 {
 
 .lead {
   margin: 10px 0 0 0;
+  @media screen and (min-width: 599px) {
+    margin: 39px 0 0 0;
+  }
 }
 .credit {
   font-size: 14px;
@@ -148,43 +154,31 @@ h6 {
   margin: 20px 0 20px 0;
 }
 
-// ナビ 始まり--------------------------------------------------------
-.bousai-navi {
+// header バッグ帯 --------------------------------------------------------
+
+#bousai-header {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+
+.bousai-header-bg {
+  background-color: $main-y-c;
+  height: 55px;
+  margin: 0;
+  z-index: -100;
+}
+.bousai-header-bg-line {
+  background-image: url(../images/bousai-h_bg.svg);
+  background-color: $main-y-c;
+  background-repeat: repeat;
+  background-size: contain;
+  position: relative;
+  height: 12px;
   margin: 0;
 }
 
-.navi-main {
-  background-image: url(../images/bousai-obi.jpg);
-  background-color: $main-y-c;
-  background-repeat: no-repeat;
-  background-size: contain;
-
-  display: flex;
-  align-items: center;
-  position: relative;
-  height: 39px;
-}
-
-.bousai-logo-mini,
-.yol-logo {
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-
-  img {
-    height: 100%;
-  }
-}
-
-.bousai-logo-mini {
-  height: 28px;
-  img {
-    margin: 2px 2px 0 0;
-  }
-}
-.yol-logo {
-  height: 20px;
-}
+// ナビ 始まり--------------------------------------------------------
 
 // 開閉メニュー---------------------------------
 
@@ -192,10 +186,10 @@ h6 {
   display: block;
   position: absolute;
   z-index: 13;
-  right: 22px;
-  top: 0;
-  width: 30px;
-  height: 30px;
+  right: 36px;
+  top: 12px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   text-align: center;
 
@@ -262,6 +256,10 @@ h6 {
     margin-top: 50px;
     width: 50%;
   }
+
+  @media screen and (min-width: 599px) {
+    width: 30%;
+  }
 }
 
 .menu-ul {
@@ -312,6 +310,15 @@ h6 {
       transform: scaleX(1);
     }
   }
+
+  @media screen and (min-width: 599px) {
+    font-size: 23px;
+    margin: 25px 0 0 0;
+    img {
+      margin: 20px 0 0 0;
+      width: 39%;
+    }
+  }
 }
 
 // jQueryで
@@ -320,43 +327,94 @@ nav.naviSp.active {
   visibility: visible;
 }
 
-// 開閉ボタン終了-----------
+//ロゴと見出し------------------------------------------------------------
+.bousai-logo_headline-main {
+  position: relative;
+  margin: 0 16px 20px 16px;
+}
 
-// footer --------------------------------------------------------
-
-.footer-yol-logo {
-  background-color: $main-y-c;
-  width: 100%;
-  margin-top: 30px;
-  height: 35px;
+.bousai-logo_headline {
   display: flex;
-  justify-content: center;
-  align-items: center;
-
-  a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  img {
+  position: relative;
+  @media screen and (min-width: 599px) {
     margin: 0 auto;
-    padding: 10px;
-    width: 120px;
+    max-width: 714px;
   }
 }
+
+.bousai-logo {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  width: 140px;
+
+  img {
+    height: 100%;
+    width: auto;
+  }
+}
+
+.page-headline {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  margin-left: 150px;
+  max-width: 180px;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+// レスポンシブでのロゴと見出しの大きさまとめ
+@media screen and (max-width: 350px) {
+  .bousai-logo {
+    width: 106px;
+  }
+  .page-headline {
+    margin-left: 110px;
+  }
+}
+@media screen and (min-width: 500px) {
+  .bousai-logo_headline-main {
+    margin-bottom: 40px;
+  }
+  .bousai-logo {
+    width: 170px;
+  }
+  .page-headline {
+    top: 10px;
+    max-width: 210px;
+  }
+}
+@media screen and (min-width: 599px) {
+  .bousai-logo_headline-main {
+    margin-bottom: 40px;
+  }
+  .bousai-logo {
+    width: 185px;
+  }
+  .page-headline {
+    top: 15px;
+    max-width: 230px;
+  }
+}
+
+// footer --------------------------------------------------------
 
 #gototop {
   position: relative;
   cursor: pointer;
   z-index: 500;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
 
   img {
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 16px;
     width: 39px;
-    margin: 0 16px 5px 0;
   }
 }
 
@@ -364,6 +422,12 @@ nav.naviSp.active {
 
 #content-page {
   margin: 0 16px;
+  position: relative;
+
+  @media screen and (min-width: 599px) {
+    margin: 0 auto;
+    max-width: 714px;
+  }
 }
 
 #content-main {
@@ -372,13 +436,19 @@ nav.naviSp.active {
 .content-group {
   display: block;
   margin-top: 30px;
+
+  @media screen and (min-width: 599px) {
+    flex-basis: calc(50% - 20px);
+  }
 }
 
 .content-g_img {
   margin-top: 16px;
-
   img {
     width: 100%;
+  }
+  @media screen and (max-width: 600px) {
+    pointer-events: none;
   }
 }
 
@@ -394,6 +464,17 @@ nav.naviSp.active {
 
   img {
     height: 800px;
+  }
+  @media screen and (min-width: 599px) {
+    margin-right: 0;
+  }
+}
+
+#content-group-pc-flex {
+  @media screen and (min-width: 599px) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 }
 
@@ -553,9 +634,17 @@ nav.naviSp.active {
 .upface_op_pc_none {
   transition: 0.3s ease-in-out;
   opacity: 0;
+
+  @media screen and (min-width: 599px) {
+    transition: none;
+    opacity: 1;
+  }
 }
 .upface_op_pc_none.on {
   opacity: 1;
+  @media screen and (min-width: 599px) {
+    opacity: 1;
+  }
 }
 
 .upface {
@@ -600,67 +689,4 @@ nav.naviSp.active {
   filter: alpha(opacity=100);
   -moz-opacity: 1;
   transform: translateX(0);
-}
-
-@media screen and (max-width: 600px) {
-  .content-g_img {
-    pointer-events: none;
-  }
-}
-
-// レスポンシブ600以上------------------------------
-
-@media screen and (min-width: 599px) {
-  body {
-    line-height: 1.7;
-  }
-  // 文字と線----------------------
-
-  .lead {
-    margin: 39px 0 0 0;
-  }
-
-  // ナビ 始まり----------
-  nav.naviSp {
-    width: 30%;
-  }
-
-  .menu {
-    font-size: 23px;
-    margin: 25px 0 0 0;
-    img {
-      margin: 20px 0 0 0;
-      width: 39%;
-    }
-  }
-  // main-----------------------
-
-  #content-page {
-    margin: 0 auto;
-    max-width: 714px;
-  }
-
-  #content-group-pc-flex {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-
-  .content-group {
-    display: block;
-    flex-basis: calc(50% - 20px);
-  }
-
-  .content-g_img_scroll {
-    margin-right: 0;
-  }
-
-  //動き--------------------
-  .upface_op_pc_none {
-    transition: none;
-    opacity: 1;
-  }
-  .upface_op_pc_none.on {
-    opacity: 1;
-  }
 }

@@ -6,6 +6,11 @@ body {
   line-height: 1.5;
   background-color: white;
 }
+@media screen and (min-width: 599px) {
+  body {
+    line-height: 1.7;
+  }
+}
 
 a {
   text-decoration: none;
@@ -36,7 +41,6 @@ a {
 }
 
 h1 {
-  margin: 16px 0;
   color: #e8c334;
 }
 
@@ -93,6 +97,11 @@ h6 {
 .lead {
   margin: 10px 0 0 0;
 }
+@media screen and (min-width: 599px) {
+  .lead {
+    margin: 39px 0 0 0;
+  }
+}
 
 .credit {
   font-size: 14px;
@@ -137,51 +146,37 @@ h6 {
   margin: 20px 0 20px 0;
 }
 
-.bousai-navi {
-  margin: 0;
-}
-
-.navi-main {
-  background-image: url(../images/bousai-obi.jpg);
-  background-color: #e8c334;
-  background-repeat: no-repeat;
-  background-size: contain;
-  display: flex;
-  align-items: center;
-  position: relative;
-  height: 39px;
-}
-
-.bousai-logo-mini,
-.yol-logo {
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-}
-.bousai-logo-mini img,
-.yol-logo img {
+#bousai-header {
+  display: inline-block;
   height: 100%;
+  width: 100%;
 }
 
-.bousai-logo-mini {
-  height: 28px;
-}
-.bousai-logo-mini img {
-  margin: 2px 2px 0 0;
+.bousai-header-bg {
+  background-color: #e8c334;
+  height: 55px;
+  margin: 0;
+  z-index: -100;
 }
 
-.yol-logo {
-  height: 20px;
+.bousai-header-bg-line {
+  background-image: url(../images/bousai-h_bg.svg);
+  background-color: #e8c334;
+  background-repeat: repeat;
+  background-size: contain;
+  position: relative;
+  height: 12px;
+  margin: 0;
 }
 
 .naviBtn {
   display: block;
   position: absolute;
   z-index: 13;
-  right: 22px;
-  top: 0;
-  width: 30px;
-  height: 30px;
+  right: 36px;
+  top: 12px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   text-align: center;
 }
@@ -235,6 +230,11 @@ h6 {
   margin-top: 50px;
   width: 50%;
 }
+@media screen and (min-width: 599px) {
+  .naviSp {
+    width: 30%;
+  }
+}
 
 .menu-ul {
   margin: 0 auto;
@@ -283,47 +283,116 @@ h6 {
   transform-origin: left;
   transform: scaleX(1);
 }
+@media screen and (min-width: 599px) {
+  .menu {
+    font-size: 23px;
+    margin: 25px 0 0 0;
+  }
+  .menu img {
+    margin: 20px 0 0 0;
+    width: 39%;
+  }
+}
 
 nav.naviSp.active {
   opacity: 100;
   visibility: visible;
 }
 
-.footer-yol-logo {
-  background-color: #e8c334;
-  width: 100%;
-  margin-top: 30px;
-  height: 35px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.footer-yol-logo a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.footer-yol-logo img {
-  margin: 0 auto;
-  padding: 10px;
-  width: 120px;
+.bousai-logo_headline-main {
+  position: relative;
+  margin: 0 16px 20px 16px;
 }
 
+.bousai-logo_headline {
+  display: flex;
+  position: relative;
+}
+@media screen and (min-width: 599px) {
+  .bousai-logo_headline {
+    margin: 0 auto;
+    max-width: 714px;
+  }
+}
+
+.bousai-logo {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  width: 140px;
+}
+.bousai-logo img {
+  height: 100%;
+  width: auto;
+}
+
+.page-headline {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  margin-left: 150px;
+  max-width: 180px;
+}
+.page-headline img {
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width: 350px) {
+  .bousai-logo {
+    width: 106px;
+  }
+  .page-headline {
+    margin-left: 110px;
+  }
+}
+@media screen and (min-width: 500px) {
+  .bousai-logo_headline-main {
+    margin-bottom: 40px;
+  }
+  .bousai-logo {
+    width: 170px;
+  }
+  .page-headline {
+    top: 10px;
+    max-width: 210px;
+  }
+}
+@media screen and (min-width: 599px) {
+  .bousai-logo_headline-main {
+    margin-bottom: 40px;
+  }
+  .bousai-logo {
+    width: 185px;
+  }
+  .page-headline {
+    top: 15px;
+    max-width: 230px;
+  }
+}
 #gototop {
   position: relative;
   cursor: pointer;
   z-index: 500;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 #gototop img {
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: 16px;
   width: 39px;
-  margin: 0 16px 5px 0;
 }
 
 #content-page {
   margin: 0 16px;
+  position: relative;
+}
+@media screen and (min-width: 599px) {
+  #content-page {
+    margin: 0 auto;
+    max-width: 714px;
+  }
 }
 
 #content-main {
@@ -334,12 +403,22 @@ nav.naviSp.active {
   display: block;
   margin-top: 30px;
 }
+@media screen and (min-width: 599px) {
+  .content-group {
+    flex-basis: calc(50% - 20px);
+  }
+}
 
 .content-g_img {
   margin-top: 16px;
 }
 .content-g_img img {
   width: 100%;
+}
+@media screen and (max-width: 600px) {
+  .content-g_img {
+    pointer-events: none;
+  }
 }
 
 .content-group-scroll {
@@ -354,6 +433,19 @@ nav.naviSp.active {
 }
 .content-g_img_scroll img {
   height: 800px;
+}
+@media screen and (min-width: 599px) {
+  .content-g_img_scroll {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 599px) {
+  #content-group-pc-flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 }
 
 .yomiurimember {
@@ -500,9 +592,20 @@ nav.naviSp.active {
   transition: 0.3s ease-in-out;
   opacity: 0;
 }
+@media screen and (min-width: 599px) {
+  .upface_op_pc_none {
+    transition: none;
+    opacity: 1;
+  }
+}
 
 .upface_op_pc_none.on {
   opacity: 1;
+}
+@media screen and (min-width: 599px) {
+  .upface_op_pc_none.on {
+    opacity: 1;
+  }
 }
 
 .upface {
@@ -546,53 +649,6 @@ nav.naviSp.active {
   transform: translateX(0);
 }
 
-@media screen and (max-width: 600px) {
-  .content-g_img {
-    pointer-events: none;
-  }
-}
-@media screen and (min-width: 599px) {
-  body {
-    line-height: 1.7;
-  }
-  .lead {
-    margin: 39px 0 0 0;
-  }
-  nav.naviSp {
-    width: 30%;
-  }
-  .menu {
-    font-size: 23px;
-    margin: 25px 0 0 0;
-  }
-  .menu img {
-    margin: 20px 0 0 0;
-    width: 39%;
-  }
-  #content-page {
-    margin: 0 auto;
-    max-width: 714px;
-  }
-  #content-group-pc-flex {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  .content-group {
-    display: block;
-    flex-basis: calc(50% - 20px);
-  }
-  .content-g_img_scroll {
-    margin-right: 0;
-  }
-  .upface_op_pc_none {
-    transition: none;
-    opacity: 1;
-  }
-  .upface_op_pc_none.on {
-    opacity: 1;
-  }
-}
 .lb-loader,
 .lightbox {
   text-align: center;
@@ -900,6 +956,8 @@ body.lb-disable-scrolling {
 
 #top {
   width: 100%;
+  max-width: 714px;
+  margin: 0 auto;
 }
 
 .top-main {
@@ -907,30 +965,82 @@ body.lb-disable-scrolling {
   position: relative;
   margin: 0 16px;
 }
+@media screen and (min-width: 599px) {
+  .top-main {
+    margin: 0 0;
+  }
+}
 
-.bousai-logo {
-  margin: 0 0 0 auto;
+.top-bousai-logo {
+  position: absolute;
+  top: -30px;
+  left: 0;
   width: 200px;
+}
+.top-bousai-logo img {
+  height: 100%;
+  width: auto;
 }
 
 .top-lead-h3 {
-  margin: 0;
+  margin: 70px 0 0 0;
+  max-width: 714px;
 }
 
 #content-menu {
-  margin: 0 16px;
+  margin: 20px auto 0 auto;
+  max-width: 714px;
 }
 
 .content-menu-main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  max-width: 714px;
 }
-
 .content {
   display: block;
+  position: relative;
   max-width: 599px;
-  padding: 30px 60px;
+  margin: 0 60px;
+  padding: 30px 0;
+}
+@media screen and (min-width: 599px) {
+  .content {
+    margin: 0 auto;
+    width: auto;
+    flex-basis: calc(45% - 0px);
+  }
+}
+
+.content-headline-img {
+  display: flex;
+}
+
+.content-headline-right,
+.content-headline-left {
+  top: 0;
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+}
+.content-headline-right img,
+.content-headline-left img {
+  width: 40px;
+}
+
+.content-headline-right {
+  right: -30px;
+}
+
+.content-headline-left {
+  left: -30px;
+}
+@media screen and (min-width: 599px) {
+  .content-headline-left {
+    left: auto;
+    right: -30px;
+  }
 }
 
 .content-img {
@@ -951,23 +1061,14 @@ body.lb-disable-scrolling {
 .content-element {
   text-align: left;
 }
-.content-element h4 {
-  text-align: center;
-  margin: 6px 0;
-}
-.content-element h4 img {
-  height: 25px;
-}
 .content-element p {
   font-size: 15px;
   line-height: 1.5;
-  margin-bottom: -5px;
+  margin: 10px 0 0 0;
 }
 
 .photo-slide-main {
-  max-width: 599px;
-  max-height: 424px;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 
 .photo-slide {
@@ -1096,14 +1197,4 @@ body.lb-disable-scrolling {
   left: 100%;
   border: 20px solid transparent; /*吹き出しの縦幅*/
   border-left: 15px solid #19170d; /*吹き出しの横幅*/
-}
-
-@media screen and (min-width: 599px) {
-  .content {
-    padding: 20px;
-    margin: 20px 0 0 0;
-    display: block;
-    width: auto;
-    flex-basis: calc(45% - 25px);
-  }
 }/*# sourceMappingURL=bousai.css.map */
