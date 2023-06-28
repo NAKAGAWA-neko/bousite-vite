@@ -20,7 +20,10 @@
   position: absolute;
   top: -30px;
   left: 0;
-  width: 200px;
+  width: 210px;
+  @media screen and (min-width: 599px) {
+    width: 250px;
+  }
 
   img {
     height: 100%;
@@ -29,13 +32,16 @@
 }
 
 .top-lead-h3 {
-  margin: 70px 0 0 0;
+  margin: 70px 0 0px 0;
   max-width: 714px;
 }
 
 #content-menu {
-  margin: 20px auto 0 auto;
+  margin: 30px auto 0 auto;
   max-width: 714px;
+  @media screen and (min-width: 599px) {
+    margin: 20px auto 0 auto;
+  }
 }
 
 .content-menu-main {
@@ -44,6 +50,7 @@
   justify-content: space-between;
   max-width: 714px;
   @media screen and (min-width: 599px) {
+    margin-right: 35px;
   }
 }
 
@@ -55,7 +62,7 @@
   padding: 30px 0;
 
   @media screen and (min-width: 599px) {
-    margin: 0 auto;
+    margin: 0 0;
     width: auto;
     flex-basis: calc(45% - 0px);
   }
@@ -70,9 +77,15 @@
   top: 0;
   position: absolute;
   background-color: white;
+  border: solid 3px l.$main-b-c;
+  border-radius: 2px;
   padding: 10px;
   img {
     width: 40px;
+  }
+
+  &:hover {
+    background-color: l.$main-bgy-c;
   }
 }
 
@@ -100,6 +113,11 @@
     overflow: hidden;
     object-fit: cover;
     border-radius: 5px;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.99;
+    }
   }
 }
 
@@ -110,6 +128,7 @@
     font-size: 15px;
     line-height: 1.5;
     margin: 10px 0 0 0;
+    text-align: justify;
   }
 }
 
@@ -254,7 +273,3 @@
   border: 20px solid transparent; /*吹き出しの縦幅*/
   border-left: 15px solid l.$main-b-c; /*吹き出しの横幅*/
 }
-
-// -------------------------------------------------
-
-// レスポンシブ600以上------------------------------

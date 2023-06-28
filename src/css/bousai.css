@@ -169,16 +169,28 @@ h6 {
   margin: 0;
 }
 
+.navi-btn-main {
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+  max-width: 714px;
+}
+
 .naviBtn {
   display: block;
   position: absolute;
   z-index: 13;
-  right: 36px;
-  top: 12px;
-  width: 20px;
-  height: 20px;
+  right: 16px;
+  top: -43px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   text-align: center;
+}
+@media screen and (min-width: 599px) {
+  .naviBtn {
+    right: 0;
+  }
 }
 .naviBtn span {
   display: block;
@@ -232,7 +244,9 @@ h6 {
 }
 @media screen and (min-width: 599px) {
   .naviSp {
-    width: 30%;
+    max-width: 714px;
+    position: absolute;
+    margin-top: 0;
   }
 }
 
@@ -371,17 +385,22 @@ nav.naviSp.active {
   }
 }
 #gototop {
+  margin: 0 auto;
+  max-width: 714px;
   position: relative;
   cursor: pointer;
   z-index: 500;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
 }
 #gototop img {
   position: absolute;
-  bottom: 0;
+  top: 0;
   right: 16px;
   width: 39px;
+}
+@media screen and (min-width: 599px) {
+  #gototop img {
+    top: -30px;
+  }
 }
 
 #content-page {
@@ -975,7 +994,12 @@ body.lb-disable-scrolling {
   position: absolute;
   top: -30px;
   left: 0;
-  width: 200px;
+  width: 210px;
+}
+@media screen and (min-width: 599px) {
+  .top-bousai-logo {
+    width: 250px;
+  }
 }
 .top-bousai-logo img {
   height: 100%;
@@ -983,13 +1007,18 @@ body.lb-disable-scrolling {
 }
 
 .top-lead-h3 {
-  margin: 70px 0 0 0;
+  margin: 70px 0 0px 0;
   max-width: 714px;
 }
 
 #content-menu {
-  margin: 20px auto 0 auto;
+  margin: 30px auto 0 auto;
   max-width: 714px;
+}
+@media screen and (min-width: 599px) {
+  #content-menu {
+    margin: 20px auto 0 auto;
+  }
 }
 
 .content-menu-main {
@@ -998,6 +1027,12 @@ body.lb-disable-scrolling {
   justify-content: space-between;
   max-width: 714px;
 }
+@media screen and (min-width: 599px) {
+  .content-menu-main {
+    margin-right: 35px;
+  }
+}
+
 .content {
   display: block;
   position: relative;
@@ -1007,7 +1042,7 @@ body.lb-disable-scrolling {
 }
 @media screen and (min-width: 599px) {
   .content {
-    margin: 0 auto;
+    margin: 0 0;
     width: auto;
     flex-basis: calc(45% - 0px);
   }
@@ -1022,11 +1057,17 @@ body.lb-disable-scrolling {
   top: 0;
   position: absolute;
   background-color: white;
+  border: solid 3px #19170d;
+  border-radius: 2px;
   padding: 10px;
 }
 .content-headline-right img,
 .content-headline-left img {
   width: 40px;
+}
+.content-headline-right:hover,
+.content-headline-left:hover {
+  background-color: #ffe88a;
 }
 
 .content-headline-right {
@@ -1057,6 +1098,10 @@ body.lb-disable-scrolling {
      object-fit: cover;
   border-radius: 5px;
 }
+.content-img img:hover {
+  cursor: pointer;
+  opacity: 0.99;
+}
 
 .content-element {
   text-align: left;
@@ -1065,6 +1110,7 @@ body.lb-disable-scrolling {
   font-size: 15px;
   line-height: 1.5;
   margin: 10px 0 0 0;
+  text-align: justify;
 }
 
 .photo-slide-main {
